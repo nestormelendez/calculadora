@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contendor {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculadora {
+  border: 1px solid black;
+  height: 500px;
+  width: 300px;
+  background-color: white;
+
+}
+.titulo {
+  background-color: darkslategray;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  font-weight: bold;
+}
+.pantalla {
+  background-color: lightslategray;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10px;
+  }
+.valores-acumulados {
+  height: 20px;
+}
+
+.valor-ingresado {
+  font-size: 3rem;
+  font-weight: bold;
+  height: 60px;
+}
+.botones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 357px;
+}
+
+.boton-numerico {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  background-color: darkslategray;
+
+}
