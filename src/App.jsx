@@ -32,41 +32,44 @@ function App() {
       }
     }
     function calcular() {
-      let index = 0
-      let resultado = Number(valoresAcumulados[0])
-
-      while (index < valoresAcumulados.length) {
-        const elemento = valoresAcumulados[index]
-        if (signos.includes(elemento)) {
-          if (elemento === "+") {
+      if (numeroIngresado !== "") {
+        let index = 0
+        let resultado = valoresAcumulados[0] ? Number(valoresAcumulados[0]) : Number(numeroIngresado)
+  
+        while (index < valoresAcumulados.length) {
+          const elemento = valoresAcumulados[index]
+          if (signos.includes(elemento)) {
+            if (elemento === "+") {
+              const siguienteElemento = valoresAcumulados[index + 1]
+              if (siguienteElemento) {
+                resultado = resultado + Number(siguienteElemento)
+              } else {
+                resultado = resultado + Number(numeroIngresado)
+            }
+          }
+          if (elemento === "-") {
             const siguienteElemento = valoresAcumulados[index + 1]
             if (siguienteElemento) {
-              resultado = resultado + Number(siguienteElemento)
+              resultado = resultado - Number(siguienteElemento)
             } else {
-              resultado = resultado + Number(numeroIngresado)
+              resultado = resultado - Number(numeroIngresado)
+            }
+          }
+          if (elemento === "*") {
+            const siguienteElemento = valoresAcumulados[index + 1]
+            if (siguienteElemento) {
+              resultado = resultado * Number(siguienteElemento)
+            } else {
+              resultado = resultado * Number(numeroIngresado)
+            }
           }
         }
-        if (elemento === "-") {
-          const siguienteElemento = valoresAcumulados[index + 1]
-          if (siguienteElemento) {
-            resultado = resultado - Number(siguienteElemento)
-          } else {
-            resultado = resultado - Number(numeroIngresado)
-          }
-        }
-        if (elemento === "*") {
-          const siguienteElemento = valoresAcumulados[index + 1]
-          if (siguienteElemento) {
-            resultado = resultado * Number(siguienteElemento)
-          } else {
-            resultado = resultado * Number(numeroIngresado)
-          }
-        }
+        index = index + 1
       }
-      index = index + 1
-    }
-    setValoresAcumulados([])
-    setNumeroIngresado(resultado.toString())
+      setValoresAcumulados([])
+      setNumeroIngresado(resultado.toString())
+        
+      }
 
   }
 
