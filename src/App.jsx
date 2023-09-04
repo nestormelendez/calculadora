@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="contendor">
       <div className="calculadora">
-        <header className="titulo"> calculadora</header>
+        <header className="titulo"> Calculadora</header>
         <section className="pantalla">
           <article className="valores-acumulados">{valoresAcumulados}</article>
           <article className="valor-ingresado">{numeroIngresado}</article>
